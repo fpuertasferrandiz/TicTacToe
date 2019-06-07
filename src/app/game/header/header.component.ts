@@ -10,13 +10,16 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 })
 export class HeaderComponent implements OnInit {
 
-	private _state$: BehaviorSubject<State>;
+  private _state$: BehaviorSubject<State>;
+  private _state: State;
 
-  constructor(stateService: StateService) { 
-  	this._state$ = stateService.state$;
+  constructor(stateService: StateService) {
+    this._state$ = stateService.state$;
   }
 
   ngOnInit() {
+    this._state$.subscribe((data) => {
+      this._state = data;
+    });
   }
-
 }

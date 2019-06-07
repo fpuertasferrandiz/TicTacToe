@@ -8,7 +8,7 @@ import { StateService } from './../state.service';
 })
 export class BoardComponent implements OnInit {
 
-	private _values: string[][];
+  private _values: string[][];
 
   constructor(stateService: StateService) {
     this._values = stateService.state.values;

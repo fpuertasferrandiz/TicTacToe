@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StateService } from '../state.service';
 
 @Component({
   selector: 'app-game',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameComponent implements OnInit {
 
-  constructor() { }
+  private _stateService: StateService;
+  constructor(stateService: StateService) {
+    this._stateService = stateService;
+  }
 
   ngOnInit() {
   }
 
+  _reset() {
+    this._stateService.reset();
+  }
 }

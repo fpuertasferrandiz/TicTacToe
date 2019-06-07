@@ -5,12 +5,13 @@ import { HeaderComponent } from './header/header.component';
 import { BoardComponent } from './board/board.component';
 import { SquareComponent } from './square/square.component';
 import { StateService } from './state.service';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [GameComponent, HeaderComponent, BoardComponent, SquareComponent],
+  declarations: [GameComponent, HeaderComponent, BoardComponent, SquareComponent, FooterComponent],
   exports: [GameComponent],
   providers: [StateService]
 })

@@ -22,8 +22,10 @@ export class SquareComponent implements OnInit {
   }
 
   _handleSquareClick() {
-  	console.log('Click on square', this.row, this.column);
-    this._stateService.updateValue(this.row, this.column);
+    console.log('Click on square', this.row, this.column);
+    if (!this._stateService.state.hasWinner) {
+      this._stateService.updateValue(this.row, this.column);
+    }
   }
 
 }
