@@ -4,8 +4,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 export interface State {
     turn: string;
     values: string[][];
-    movementsX: number;
-    movementsO: number;
+    movements: number;
     hasWinner: boolean;
   }
 
@@ -25,8 +24,7 @@ export class StateService {
         ['-', '-', '-'],
         ['-', '-', '-']
       ],
-      movementsX : 0,
-      movementsO : 0,
+      movements : 0,
       hasWinner : false
     };
 
@@ -50,11 +48,7 @@ export class StateService {
     if (this.state.values[row][col] === '-') {
       const newValue = this.state.turn === 'PLAYERX' ? 'X' : '0';
       const newTurn = this.state.turn === 'PLAYERX' ? 'PLAYER0' : 'PLAYERX';
-      if (this.state.turn === 'PLAYERX') {
-        this.state.movementsX++;
-      } else {
-        this.state.movementsO++;
-      }
+       this.state.movements++;
       this.state.values[row][col] = newValue;
       if (this.hasWinner()) {
         this.state.hasWinner = true;
@@ -75,8 +69,7 @@ export class StateService {
         ['-', '-', '-'],
         ['-', '-', '-']
       ],
-      movementsX : 0,
-      movementsO : 0,
+      movements : 0,
       hasWinner : false
     };
   }

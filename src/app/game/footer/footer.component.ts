@@ -19,11 +19,7 @@ export class FooterComponent implements OnInit {
   ngOnInit() {
     this._stateService.state$.subscribe((data) => {
       this.estado = data;
-      if (this.estado.turn === 'PLAYERX') {
-        this.movimientos = this.estado.movementsX;
-      } else {
-        this.movimientos = this.estado.movementsO;
-      }
+      this.movimientos = this.estado.movements;
     });
   }
 
